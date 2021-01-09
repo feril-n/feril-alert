@@ -5,4 +5,4 @@ Webhook girmek için server_config Config.Webhook'tan webhook adresinizi girebil
 Hex İd yerine yetki sistemi kullanılıyor.
 Yeni tasarım.
 Konsola log olarak düşüyor hangi yetkilinin ne duyurusu attığı dilerseniz webhook ta ekleyerek discorda da düşürebilirsiniz.
-https://i.hizliresim.com/mVpqK3.png
+
