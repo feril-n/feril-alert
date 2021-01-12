@@ -39,8 +39,15 @@ local player = GetPlayerName(source)
 			PerformHttpRequest(Config.Webhook, 
 			function(err, msg2, player) end, 
 			'POST', 
-			json.encode({username = player, content = '```fix\nDuyuru: \n' .. msg2 .. '```', avatar_url=Config.Resim }), {['Content-Type'] = 'application/json'}) 
-end)
+			--json.encode({username = player, content = '```fix\nDuyuru: \n' .. msg2 .. '```', avatar_url=Config.Resim }), {['Content-Type'] = 'application/json'}) 
+			json.encode({username = player, avatar_url= Config.resim, embeds = {
+				{
+					["color"] = "1127128",
+					["title"] = 'Duyuru',
+					["description"] = '**Yetkili: ** '.. player ..' \n **Mesaj: **'  .. msg2 
+				}
+				}}), { ['Content-Type'] = 'application/json' })
+		end)
 
 AddEventHandler('chatMessage', function(source, name, msg, msg2)
 		local command = stringsplit(msg, " ")[1];
